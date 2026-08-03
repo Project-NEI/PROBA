@@ -18,7 +18,7 @@
   set table(stroke:1.5pt + accent_color)
   show raw: set text(font:"Inconsolata", size:24pt, weight:"medium")
   show math.equation: set text(font: "STIX Two Math", size:24pt)
-  set text(font: "Open Sans", hyphenate: false, fill: normal_text, weight:500)
+  set text(font: "Open Sans", hyphenate: false, fill: normal_text, weight:"medium")
   set raw(theme:"../nei-style/nei.tmTheme")
   set table(fill:region_color)
   set text(lang: "en")
@@ -151,7 +151,7 @@
     [#content]
   )
   if author != none {
-    set text(font: "Open Sans", size: 24pt, weight:500, style: "italic")
+    set text(font: "Open Sans", size: 24pt, weight:"medium", style: "italic")
     block(
       [#author]
     )
@@ -271,7 +271,7 @@
     set text(
       size: text-size,
       fill: text-color,
-      weight: 500
+      weight: "medium"
     )
 
     set align(center + horizon)

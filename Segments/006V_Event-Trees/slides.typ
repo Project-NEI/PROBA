@@ -1,5 +1,7 @@
 // Boilerplate
 #import "../nei-style/lib.typ": *
+
+
 #show: typslides.with(
   ratio: "16-9",
   title: "Bayesian Networks",
@@ -136,5 +138,5 @@ int main() {
 #final-slide(title:"Bayesian Networks")[
   #keyvalue("Reading", "Sections 13.1 - 13.3.1")
 
-  #keyvalue("Photo", "Rex Savage")
+  #keyvalue("Tomorrow's Lab", "Making Full Joint Distributions")
 ]

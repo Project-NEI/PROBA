@@ -69,20 +69,20 @@
   set page(footer: none)
 
   if course != none {
-    text(40pt, weight: "bold")[#course:]
+    text(22pt, weight: "medium")[#course:]
   }
   linebreak()
   text(40pt, weight: "bold", fill:accent-color)[#title]
 
   if subtitle != none {
     v(0.2cm)
-    text(24pt, style:"italic")[#subtitle]
+    text(22pt, weight: "medium")[#subtitle]
   }
 
   divider(color:accent-color)
   v(1cm)
   if authors != none {
-    text(22pt)[#authors]
+    text(22pt, weight: "medium")[#authors]
   }
   linebreak()
 
