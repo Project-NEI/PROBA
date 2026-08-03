@@ -2,16 +2,16 @@
 ### PROBA Activity 1
 # Instructor Guide for *Making Simulations*
 
-This will be the students' first lab, so they will need some hand-holding. _Fortunately_, the goals for this session are pretty modest.
+This will be the students' first lab, so they will need some hand holding. _Fortunately_, the goals for this session are pretty modest.
 
 ## Key Concepts
 
-To explore probability using Python, the student needs a few basic skills. They will learn this foundation today:
+To explore probability using Python this semester, the student will need a few basic skills. They will learn this foundation today:
 
 - How to generate pseudorandom floating point numbers between 0 and 1.
 - How to simulate flipping a coin a million times.
 - How to simulate rolling a 100-sided die a million times.
-- How to make a basic bar chart.
+- How to make a basic bar chart and histogram.
 
 ## References
 
@@ -21,7 +21,7 @@ To explore probability using Python, the student needs a few basic skills. They 
 
 ## Steps
 
-0. The student needs to have a text editor and Python installed on their computer.
+0. The student needs to have a text editor and Python installed on their computer. If they don't know any text editors, VSCode is a common choice and runs on every platform.  Make sure the Python is a recent version, at least 3.13.
 
 1. In a text editor, the student will make a file called `random1.py`.  They are trying to print 20 random numbers between 0 and 1.  Here is a solution:
 

@@ -17,17 +17,11 @@
   region: "US",
   font: "Open Sans", // sets the "font" variable
   fontsize: 12pt, // likewise
+  fontweight: "medium",
   sectionnumbering: none,
   doc,
 ) = {
-  set page(
-    width: 210mm,
-    height: 297mm,
-    flipped: false,  // if true = flips to landscape format,
-    margin: (left: 2cm, top: 1.5cm, right: 2cm, bottom: 1.5cm),
-
-// Header and Footer
-//
+  set page("us-letter", margin: (left: 2cm, top: 1.5cm, right: 2cm, bottom: 1.5cm),
     header:  // A running head: document title
       context {
         if counter(page).at(here()).first() > 1 [    // after page 1
@@ -88,8 +82,8 @@
 
 // Code snippets:
 //
-  show raw: set block(inset: (left: 2em, top: 0.5em, right: 1em, bottom: 0.5em ), fill:rgb("E0E0E0"), radius:0.3cm, breakable:false)
-  show raw: set text(font: "Inconsolata",size:14pt)
+  show raw: set block(width: 100%,inset: (left: 0.5em, top: 0.5em, right: 0.5em, bottom: 0.5em ), fill:rgb("E0E0E0"), radius:0.3cm, breakable:false)
+  show raw: set text(font: "Inconsolata",size:12pt)
 
 
 // Footnote formatting
@@ -105,20 +99,20 @@
   show heading: set text(hyphenate: false)
 
   show heading.where(level: 1
-    ):  it => align(left, block(above: 1.5em, below: 1.5em, width: 80% )[
+    ):  it => align(left, block(above: 1.5em, below: 1.0em, width: 80% )[
         #set par(leading: 5em)
         #set text(font: font, weight: "semibold", size: 14pt)
         #block(it.body)
       ])
 
   show heading.where(level: 2
-    ): it => align(left, block(above: 1.3em, below: 1.3em, width: 80%)[
+    ): it => align(left, block(above: 1.3em, below: 1.0em, width: 80%)[
         #set text(font: font, weight: "semibold", size: 12pt)
         #block(it.body)
       ])
 
   show heading.where(level: 3
-    ): it => align(left, block(above: 1.3em, below: 1.3em)[
+    ): it => align(left, block(above: 1.2em, below: 0.9em)[
         #set text(font: font, weight: "regular", style: "italic", size: 11pt)
         #block(it.body)
       ])
