@@ -10,7 +10,7 @@
 
 // Slides
 
-#slide(title:"Bullet Lists")[
+#slide(title:"Bullet Lists and Math")[
 
   We can model coffee orders with *five* variables:
   - $t_0 in {1,2,3}$
