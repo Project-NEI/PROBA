@@ -2,7 +2,6 @@
 
 //#show raw: set text(font:"Inconsolata", size:24pt, weight:900)
 
-#set text(lang: "en")
 
 //************************************************************************\\
 
@@ -30,7 +29,7 @@
 
 //************************************************************************\\
 
-#let _divider(color: none) = {
+#let divider(color: none) = {
   line(
     length: 100%,
     stroke: 2.5pt + color,
@@ -63,32 +62,32 @@
   reading,
   affiliation,
   theme-color,
-  special_text,
+  accent-color,
 ) = {
 
   set align(left + horizon)
   set page(footer: none)
 
   if course != none {
-    text(40pt, weight: "extrabold")[#course:]
+    text(40pt, weight: "bold")[#course:]
   }
   linebreak()
-  text(40pt, weight: "bold", fill: special_text)[#title]
+  text(40pt, weight: "bold", fill:accent-color)[#title]
 
   if subtitle != none {
-    set text(24pt)
-    subtitle
+    v(0.2cm)
+    text(24pt, style:"italic")[#subtitle]
   }
 
-  _divider(color: theme-color)
-
+  divider(color:accent-color)
+  v(1cm)
   if authors != none {
-    text(22pt, weight: "regular")[#authors]
+    text(22pt)[#authors]
   }
   linebreak()
 
   if reading != none {
-    text(22pt, weight: "regular")[#reading]
+    text(22pt)[#reading]
   }
   linebreak()
 

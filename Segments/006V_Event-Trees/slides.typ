@@ -1,17 +1,16 @@
+// Boilerplate
 #import "../nei-style/lib.typ": *
-
 #show: typslides.with(
-  ratio: "16-9"
-)
-
-#front-slide(
+  ratio: "16-9",
   title: "Bayesian Networks",
+  subtitle: "Understanding how one random variable can affect another",
 )
 
+// Slides
 
 #slide(title:"Bullet Lists")[
 
-  We can _model_ coffee orders with five variables:
+  We can model coffee orders with *five* variables:
   - $t_0 in {1,2,3}$
   - $r in RR$
   - $p in QQ$
@@ -28,7 +27,10 @@
 ]
 
 #slide(title:"Tables and Columns")[
+
     A _Bayesian Network_ encodes dependencies as a directed graph, and each node has a CPT.
+
+    #divider()
 
     #cols(columns: (2fr, 3fr))[
 
@@ -68,34 +70,52 @@
 
 
 #slide(title:"Boxes and Equations")[
-  #boxed[
-    $p(k) = binom(n,k) r^k q^(n-k)$
-  ]
+  For a random variable whose domain is $RR$, the following is _always_ true:
+
   #boxed[
     $integral_(-infinity)^(infinity) p(x) upright(d)x = 1.0$
+  ]
+
+  Where $p$ is the probability density function of the random variable $x$.
+
+  This is analogous to the the discrete case:
+
+  #boxed[
+    $sum_(x in X) P(x) = 1.0$
   ]
 ]
 
 #slide(title:"Pseudocode")[
 #set text(size:20pt)
 #pseudocode-list[
-  + *define* bfs($G$, $v$):
+  + define bfs($G$, $v$):
     + for all $u in V$:
       + $"hops"[u] := infinity$
     + $"hops"[v] := 0$
     + $Q."push_tail"(v)$
-    + *while* $Q$ is not empty:
+    + while $Q$ is not empty:
       + $u := Q."pop_head"()$
-      + *for all* edges $(u, v) in E$:
-        + *if* $"hops"[v] = infinity$:
+      + for all edges $(u, v) in E$:
+        + if $"hops"[v] = infinity$:
           + $Q."push_tail"(v)$
           + $"hops"[v] := "hops"[u] + 1$
 ]
 ]
 
 #slide(title:"Diagram from DrawIO")[
-  #image("test.pdf",height:100%)
+  #image("test2.pdf",height:100%)
 ]
+
+// #slide(title:"Photo with credit and blockquote")[
+#focus-slide[
+#cols(columns: (1fr, 3fr))[
+  #image("dogpic.jpg")
+  #credit[Photo by Basile Morin]
+][
+  #blockquote(author: "Samuel Butler")[
+    "The greatest pleasure of a dog is that you may make a fool of yourself with him, and not only will he not scold you, but he will make a fool of himself too."
+  ]
+]]
 
 #slide(title:"Code")[
 ```c
@@ -113,7 +133,7 @@ int main() {
 ]
 
 
-#final-slide[
+#final-slide(title:"Bayesian Networks")[
   #keyvalue("Reading", "Sections 13.1 - 13.3.1")
 
   #keyvalue("Photo", "Rex Savage")

@@ -10,9 +10,15 @@
   blank-slide,
   bibliography-slide,
   final-slide,
+  credit,
+  blockquote,
   framed,
   boxed,
-  stress
+  divider,
+  accent_color,
+  background_color,
+  normal_text,
+  region_color
 )
 
 #import "lovelace.typ": (
@@ -25,10 +31,3 @@
 )
 
 #import "../local.typ": presenter
-
-
-
-#let lecture_phase = sys.inputs.at("phase", default: "post")
-#let pre_only(body) = if lecture_phase == "pre" { body }
-#let post_only(body) = if lecture_phase == "post" { body }
-#let phase_only(phase, body) = if lecture_phase == phase { body }
